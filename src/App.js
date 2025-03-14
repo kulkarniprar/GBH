@@ -5,6 +5,7 @@ import RiderSignUp from "./Components/RiderSignUp";
 import DriverSignUp from "./Components/DriverSignUp";
 import DriverDashboard from "./pages/DriverDashboard";
 import RiderDashboard from "./pages/RiderDashboard";
+import Leader from "./Components/leader/leader"
 
 const App = () => {
   return (
@@ -16,6 +17,7 @@ const App = () => {
           <Route path="/driver-signup" element={<DriverSignUp />} />
           <Route path="/rider-dashboard" element={<RiderDashboard />} />
           <Route path="/driver-dashboard" element={<DriverDashboard />} />
+          <Route path="/leaderboard" element={<Leader />} />
         </Routes>
         </div>
       </Router>

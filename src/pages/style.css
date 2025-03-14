@@ -1,0 +1,82 @@
+body {
+    background-color: #121212;
+    color: white;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 10px;
+  }
+  
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background: #1a1a1a;
+    margin-left: 500px;
+  }
+  
+  .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  
+  nav a {
+    color: white;
+    text-decoration: none;
+    margin:  15px;
+  }
+  
+  .profile-icon {
+    font-size: 1.5rem;
+  }
+  
+  .content {
+    margin-top: 250px;
+  }
+  
+  .earnings {
+    font-size: 2rem;
+    font-weight: bold;
+  }
+  
+  .wallet-icon {
+    font-size: 1.5rem;
+  }
+  
+  .buttons {
+    margin-top: 20px;
+  }
+  
+  button {
+    border: none;
+    padding: 10px 20px;
+    margin: 10px;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .go-online {
+    background-color: #a0802e;
+    color: white;
+  }
+  
+  .go-offline {
+    background-color: #b02e2e;
+    color: white;
+  }
+  
+  .badge {
+    background-color: yellow;
+    color: black;
+    padding: 3px 7px;
+    font-size: 0.8rem;
+    margin-right: 5px;
+    border-radius: 3px;
+  }
+  
+  .badge.red {
+    background-color: red;
+    color: white;
+  }
+  

@@ -1,14 +1,18 @@
-import React, { useState } from 'react';
-import { auth } from '../firebase'; // Ensure the correct Firebase import
-import { createUserWithEmailAndPassword } from "firebase/auth";
-import './home.css'; // Import the CSS for styling
+import React, { useState } from "react";
+import { auth } from "../firebase"; // Ensure correct Firebase import
+import {
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+} from "firebase/auth";
+import "./home.css"; // Import the CSS for styling
 
 function Home() {
-  const [userType, setUserType] = useState('passenger');
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [error, setError] = useState('');
-  const [successMessage, setSuccessMessage] = useState('');
+  const [userType, setUserType] = useState("passenger");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
+  const [successMessage, setSuccessMessage] = useState("");
+  const [isLogin, setIsLogin] = useState(false); // Toggle between Sign Up & Login
 
   const handleUserTypeChange = (type) => {
     setUserType(type);
@@ -18,54 +22,93 @@ function Home() {
     e.preventDefault();
 
     if (!email || !password) {
-      setError('Both fields are required!');
+      setError("Both fields are required!");
       return;
     }
 
-    setError('');
-    setSuccessMessage('');
+    setError("");
+    setSuccessMessage("");
 
     try {
-      const userCredential = await createUserWithEmailAndPassword(auth, email, password);
-      console.log("User signed up:", userCredential.user);
+      if (isLogin) {
+        // LOGIN FLOW
+        const userCredential = await signInWithEmailAndPassword(
+          auth,
+          email,
+          password
+        );
+        console.log("User logged in:", userCredential.user);
+        setSuccessMessage(`Successfully logged in as a ${userType}`);
 
-      setSuccessMessage(`Successfully registered as a ${userType}`);
-      setEmail('');
-      setPassword('');
-
-      // Redirect user based on type (Modify accordingly)
-      if (userType === 'driver') {
-        window.location.href = "/driver-dashboard"; // Placeholder redirection
+        // Redirect based on user type
+        window.location.href =
+          userType === "driver" ? "/driver-dashboard" : "/rider-dashboard";
       } else {
-        window.location.href = "/rider-dashboard";
+        // SIGN-UP FLOW
+        const userCredential = await createUserWithEmailAndPassword(
+          auth,
+          email,
+          password
+        );
+        console.log("User signed up:", userCredential.user);
+        setSuccessMessage(`Successfully registered as a ${userType}`);
+
+        // Redirect based on user type
+        window.location.href =
+          userType === "driver" ? "/driver-dashboard" : "/rider-dashboard";
       }
+
+      setEmail("");
+      setPassword("");
     } catch (error) {
-      setError(error.message); // Show Firebase error message
+      setError(error.message);
     }
   };
 
   return (
     <div className="app">
       <header className="header">
-        <img src="https://i.pinimg.com/474x/c7/7b/7e/c77b7e3dde82fcad8f685d1bb1c75321.jpg" alt="Namma Yatri Logo" className="logo" />
+        <img
+          src="https://i.pinimg.com/474x/c7/7b/7e/c77b7e3dde82fcad8f685d1bb1c75321.jpg"
+          alt="Namma Yatri Logo"
+          className="logo"
+        />
       </header>
 
       <div className="form-container">
+        {/* User Type Selection */}
         <div className="user-type-toggle">
           <button
-            onClick={() => handleUserTypeChange('passenger')}
-            className={userType === 'passenger' ? 'active' : ''}
+            onClick={() => handleUserTypeChange("passenger")}
+            className={userType === "passenger" ? "active" : ""}
           >
             Passenger
           </button>
           <button
-            onClick={() => handleUserTypeChange('driver')}
-            className={userType === 'driver' ? 'active' : ''}
+            onClick={() => handleUserTypeChange("driver")}
+            className={userType === "driver" ? "active" : ""}
           >
             Driver
           </button>
         </div>
 
+        {/* Toggle between Login & Sign Up */}
+        <div className="auth-toggle">
+          <button
+            onClick={() => setIsLogin(false)}
+            className={!isLogin ? "active" : ""}
+          >
+            Sign Up
+          </button>
+          <button
+            onClick={() => setIsLogin(true)}
+            className={isLogin ? "active" : ""}
+          >
+            Login
+          </button>
+        </div>
+
+        {/* Form for Sign Up & Login */}
         <form onSubmit={handleSubmit}>
           <div className="form-group">
             <label htmlFor="email">Email</label>
@@ -94,8 +137,8 @@ function Home() {
           {error && <p className="error-message">{error}</p>}
           {successMessage && <p className="success-message">{successMessage}</p>}
 
-          <button type="submit" className="signup-btn">
-            Sign Up
+          <button type="submit" className="auth-btn">
+            {isLogin ? "Login" : "Sign Up"}
           </button>
         </form>
       </div>

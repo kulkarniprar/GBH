@@ -1,5 +1,7 @@
 /* Leaderboard Container */
 .leaderboard-container {
+    display: flex;
+    flex-direction: column;
     width: 90%;
     max-width: 600px;
     margin: 20px auto;
