@@ -1,0 +1,82 @@
+/* Leaderboard Container */
+.leaderboard-container {
+    width: 90%;
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background: #f8fafc;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  /* Leaderboard Title */
+  .leaderboard-title {
+    font-size: 50px;
+    font-weight: bold;
+    color: #2c3e50;
+    margin-bottom: 10px;
+  }
+  
+  /* Leaderboard Grid */
+  .leaderboard-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  /* Leaderboard Cards */
+  .leaderboard-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease-in-out;
+  }
+  
+  .leaderboard-card:hover {
+    transform: scale(1.03);
+  }
+  
+  /* Rank Number */
+  .leaderboard-card h3 {
+    font-size: 20px;
+    font-weight: bold;
+    color: #ffcc00;
+  }
+  
+  /* Driver ID */
+  .driver-id {
+    font-size: 16px;
+    font-weight: bold;
+    color: #34495e;
+  }
+  
+  /* XP Points */
+  .xp-points {
+    font-size: 16px;
+    font-weight: bold;
+    color: #27ae60;
+  }
+  
+  /* Background Color Based on Rank */
+  .leaderboard-card:nth-child(1) {
+    background: #99ddff;
+  }
+  
+  .leaderboard-card:nth-child(2) {
+    background: #dfe6e9;
+  }
+  
+  .leaderboard-card:nth-child(3) {
+    background: #cceeff
+  }
+  
+  /* Green Highlight for Top 5 */
+  .leaderboard-card:nth-child(-n+5) {
+    border-left: 5px solid #27ae60;
+  }
+  
