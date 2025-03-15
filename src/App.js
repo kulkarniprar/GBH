@@ -6,6 +6,7 @@ import DriverSignUp from "./Components/DriverSignUp";
 import DriverDashboard from "./pages/DriverDashboard";
 import RiderDashboard from "./pages/RiderDashboard";
 import Leader from "./Components/leader/leader"
+import Profile from "./Components/Profile";
 
 const App = () => {
   return (
@@ -18,6 +19,7 @@ const App = () => {
           <Route path="/rider-dashboard" element={<RiderDashboard />} />
           <Route path="/driver-dashboard" element={<DriverDashboard />} />
           <Route path="/leaderboard" element={<Leader />} />
+          <Route path="/profile" element={<Profile />} />
         </Routes>
         </div>
       </Router>

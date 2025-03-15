@@ -1,59 +1,84 @@
+/* Global styles */
 body {
     background-color: #121212;
     color: white;
     font-family: Arial, sans-serif;
-    text-align: center;
-    margin: 10px;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
   }
   
+  /* Header styles */
   .header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px;
+    padding: 20px 40px;
     background: #1a1a1a;
-    margin-left: 500px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
   }
   
+  /* Logo styles */
   .logo {
     font-size: 1.5rem;
     font-weight: bold;
   }
   
+  /* Navbar alignment */
+  nav {
+    margin-left: auto;
+  }
+  
   nav a {
     color: white;
     text-decoration: none;
-    margin:  15px;
+    margin: 0 20px;
+    font-size: 1rem;
   }
   
+  /* Profile icon */
   .profile-icon {
     font-size: 1.5rem;
+    margin-left: 20px;
   }
   
+  /* Content area */
   .content {
-    margin-top: 250px;
+    margin-top: 120px; /* Adjusted to move content lower */
+    text-align: center;
+    flex-grow: 1;
   }
   
+  /* Earnings section */
   .earnings {
-    font-size: 2rem;
+    font-size: 3rem;
     font-weight: bold;
+    margin-top: 80px; /* Moves earnings section further down */
   }
   
   .wallet-icon {
-    font-size: 1.5rem;
+    font-size: 2rem;
   }
   
+  /* Buttons section */
   .buttons {
-    margin-top: 20px;
+    margin-top: 40px;
   }
   
   button {
     border: none;
-    padding: 10px 20px;
-    margin: 10px;
-    font-size: 1rem;
-    border-radius: 5px;
+    padding: 15px 30px;
+    margin: 15px;
+    font-size: 1.2rem;
+    border-radius: 8px;
     cursor: pointer;
+    transition: all 0.3s ease-in-out;
   }
   
   .go-online {
@@ -61,22 +86,30 @@ body {
     color: white;
   }
   
+  .go-online:hover {
+    background-color: #d4a93d;
+  }
+  
   .go-offline {
     background-color: #b02e2e;
     color: white;
   }
   
+  .go-offline:hover {
+    background-color: #d14343;
+  }
+  
+  /* Badge styles */
   .badge {
     background-color: yellow;
     color: black;
-    padding: 3px 7px;
-    font-size: 0.8rem;
-    margin-right: 5px;
-    border-radius: 3px;
+    padding: 5px 10px;
+    font-size: 0.9rem;
+    margin-right: 10px;
+    border-radius: 5px;
   }
   
   .badge.red {
     background-color: red;
     color: white;
   }
-  
