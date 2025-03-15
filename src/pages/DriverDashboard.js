@@ -64,7 +64,6 @@ const DriverDashboard = () => {
         <div className="logo">🚖 Namma Yatri</div>
 
         <div className="profile-icon" onClick={() => navigate("/profile")}>👤</div>
-
         <nav>
           <Link to="/leaderboard">🏆 Leaderboard</Link>
           <a href="#">🎁 Rewards</a>

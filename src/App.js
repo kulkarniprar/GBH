@@ -15,6 +15,8 @@ export const SocketContext = createContext();
 // Initialize socket instance
 const socket = io('http://localhost:5000');
 
+
+
 const App = () => {
   return (
     <SocketContext.Provider value={socket}>

@@ -5,6 +5,10 @@ import { onAuthStateChanged } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
 import { SocketContext } from '../App';
 
+import React, { useState } from "react";
+import MapComponent from "../Components/MapComponent";
+import RideRequest from "../Components/RideRequest";
+
 function RiderDashboard() {
   const [riderData, setRiderData] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -49,6 +53,11 @@ function RiderDashboard() {
       setLoading(false);
     }
   };
+
+
+function RiderDashboard() {
+  const [destination, setDestination] = useState(null);
+  const userLocation = { lat: 12.9716, lng: 77.5946 }; // Default user location
 
   const handleRequestRide = () => {
     if (!pickup || !dropoff) {
@@ -119,8 +128,10 @@ function RiderDashboard() {
         <br />
         <button onClick={handleRequestRide}>Request Ride</button>
       </div>
+      <MapComponent onLocationSelect={setDestination} />
+      <RideRequest userLocation={userLocation} destination={destination} />
     </div>
   );
 }
-
+}
 export default RiderDashboard;
