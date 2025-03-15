@@ -5,7 +5,8 @@ import RiderSignUp from "./Components/RiderSignUp";
 import DriverSignUp from "./Components/DriverSignUp";
 import DriverDashboard from "./pages/DriverDashboard";
 import RiderDashboard from "./pages/RiderDashboard";
-import Leader from "./Components/leader/leader"
+import Leader from "./Components/leader/leader";
+import RideRequest from "./Components/RideRequest"
 
 const App = () => {
   return (
