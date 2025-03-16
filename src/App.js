@@ -5,13 +5,13 @@ import RiderSignUp from "./Components/RiderSignUp";
 import DriverSignUp from "./Components/DriverSignUp";
 import DriverDashboard from "./pages/DriverDashboard";
 import RiderDashboard from "./pages/RiderDashboard";
-<<<<<<< HEAD
-import Leader from "./Components/leader/leader"
-import Profile from "./Components/Profile";
-=======
 import Leader from "./Components/leader/leader";
-import RideRequest from "./Components/RideRequest"
->>>>>>> 5c0eb06ea5dd00b214a362d67ef6054fa9c0a0c4
+import RideConfirmation from "./pages/RideConfirmation"
+import BaseStationSelection from "./pages/BaseStation";
+import Profile from "./pages/Profile";
+
+
+import Heatmap from "./pages/heatmaps";  // ✅ Ensure correct path
 
 const App = () => {
   return (
@@ -24,11 +24,15 @@ const App = () => {
           <Route path="/rider-dashboard" element={<RiderDashboard />} />
           <Route path="/driver-dashboard" element={<DriverDashboard />} />
           <Route path="/leaderboard" element={<Leader />} />
+          <Route path="/user-ride-confirm" element={<RideConfirmation />} />
+          <Route path="/basestation" element={<BaseStationSelection />} />
           <Route path="/profile" element={<Profile />} />
+
+          <Route path="/heatmaps" element={<Heatmap />} />  {/* ✅ Heatmap Route */}
         </Routes>
-        </div>
-      </Router>
-    );
+      </div>
+    </Router>
+  );
 };
 
 export default App;

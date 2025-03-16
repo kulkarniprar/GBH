@@ -1,0 +1,212 @@
+.pickup-container {
+    margin-left:10px;
+    display: flex;
+    flex-direction: column;
+    background-color: #0f0f12;
+    color: white;
+    min-height: 100vh;
+    font-family: 'Inter', sans-serif;
+    padding: 1rem;
+  }
+  
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+  
+  .logo-image {
+    height: 32px;
+  }
+  
+  .section-button {
+    display: flex;
+  }
+  
+  .btn {
+    margin-top:10px;
+    border: none;
+    border-radius: 0.5rem;
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+    cursor: pointer;
+    font-weight: 500;
+  }
+  
+  .section-btn {
+    background-color: #3498db;
+    color: white;
+  }
+  
+  .pickup-status {
+    margin-bottom: 1rem;
+  }
+  .image {
+    position: absolute;
+    top: 40px;
+    left: 40px;
+    height: 160px !important;
+    width: 180px !important;
+  }
+  .section-tag {
+    display: inline-block;
+    background-color: white;
+    color: black;
+    padding: 0.25rem 0.75rem;
+    border-radius: 1rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+  }
+  
+  .section-tag.yellow {
+    background-color: #f1c40f;
+    color: black;
+  }
+  
+  .section-tag.green {
+    background-color: #2ecc71;
+    color: white;
+  }
+  
+  .section-tag.red {
+    background-color: #e74c3c;
+    color: white;
+  }
+  
+  .pickup-text {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+  }
+  
+  .pickup-text h1 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin: 0;
+  }
+  
+  .time-pill {
+    background-color: #3498db;
+    padding: 0.25rem 0.75rem;
+    border-radius: 0.5rem;
+    font-weight: 500;
+    font-size: 1rem;
+  }
+  
+  .map-container {
+    width: 100%;
+    height: 380px;
+    margin-bottom: 1rem;
+    position: relative;
+    border-radius: 1rem;
+    overflow: hidden;
+  }
+  
+  .map-placeholder {
+    width: 100%;
+    height: 100%;
+    background-color: #f0f0f0;
+  }
+  
+  .ride-info {
+    margin-bottom: 1.5rem;
+  }
+  
+  .ride-details-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 1rem;
+  }
+  
+  .section-button.green .btn {
+    background-color: #2ecc71;
+  }
+  
+  .price {
+    font-size: 1.25rem;
+    font-weight: 600;
+  }
+  
+  .rupee {
+    font-weight: normal;
+  }
+  
+  .driver-info {
+    display: flex;
+    align-items: center;
+    background-color: #c0a000;
+    border-radius: 1.5rem;
+    padding: 0.5rem 1rem;
+    padding-left: 0.5rem;
+  }
+  
+  .driver-avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background-color: #444;
+    overflow: hidden;
+    margin-right: 0.5rem;
+  }
+  
+  .avatar-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .driver-name {
+    font-weight: 500;
+  }
+  
+  .action-buttons {
+    display: flex;
+    gap: 1rem;
+    margin-top: auto;
+  }
+  
+  .btn.cancel-btn,
+  .btn.start-btn {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    font-weight: 500;
+  }
+  
+  .btn.cancel-btn {
+    background-color: rgba(231, 76, 60, 0.2);
+    color: white;
+  }
+  
+  .btn.start-btn {
+    margin-top: 10px;
+    background-color: rgba(46, 204, 113, 0.2);
+    color: white;
+  }
+  
+  /* For displaying the section tags inside buttons */
+  .btn .section-tag {
+    margin-bottom: 0;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .pickup-text {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.5rem;
+    }
+    
+    .action-buttons {
+      flex-direction: column;
+    }
+  }

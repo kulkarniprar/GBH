@@ -1,0 +1,46 @@
+body {
+    background-color: #121212;
+    color: white;
+    font-family: Arial, sans-serif;
+    text-align: center;
+  }
+  
+  .heatmap-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
+  
+   
+  
+  .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  
+  nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+  }
+  
+  .title {
+    margin-top: 20px;
+    font-size: 3rem;
+    font-weight: bold;
+  }
+  
+  .heatmap img {
+    width: 80%;
+    max-width: 600px;
+    border-radius: 10px;
+    margin-top: 20px;
+  }
+  .image {
+    position: absolute;
+    top: 40px;
+    left: 40px;
+    height: 60px !important;
+    width: 80px !important;
+  }

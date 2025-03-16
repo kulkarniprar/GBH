@@ -2,19 +2,185 @@
 body {
     background-color: #121212;
     color: white;
-    font-family: Arial, sans-serif;
     margin: 0;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Header styles */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 40px;
+    background: #1a1a1a;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+.image {
+    position: absolute;
+    top: 40px;
+    left: 40px;
+    height: 160px !important;
+    width: 180px !important;
+  }
+/* Logo styles */
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+/* Navbar alignment */
+nav {
+    display: flex;
+    margin-left: auto; /* Pushes navbar to the extreme right */
+    text-align: right;
+    margin-right:80px;
+    gap:15px;
+}
+
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: bold;
+    gap:15px;
+}
+nav a:hover {
+    color: #f4b400; /* Changes color on hover */
+    transform: scale(1.1); /* Slightly enlarges the link */
+}
+
+/* Profile icon */
+.profile-icon {
+    cursor: pointer;
+}
+
+.icon-image {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+/* Content area */
+.content {
+    margin-top: 350px; /* Adjusted to fit header */
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.5rem;
+    font-weight: lighter;
+}
+
+/* Earnings section */
+.earnings {
+    font-size: 6rem;
+    text-decoration: double;
+    font-weight: bold;
+    margin-top: 50px;
+}
+
+.wallet-icon {
+    font-size: 2rem;
+}
+
+/* Buttons section */
+.buttons {
+    margin-top: 80px;
+}
+
+button {
+    border: none;
+    padding: 12px 25px;
+    margin: 10px;
+    font-size: 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Button styles */
+.go-online {
+    background-color: #d4a028;
+    color: black;
+}
+
+.go-online:hover {
+    background-color: #f0c040;
+    transform: scale(1.1);
+}
+
+.go-offline {
+    background-color: #c0392b;
+    color: white;
+}
+
+.go-offline:hover {
+    background-color: #d14343;
+    transform: scale(1.1);
+}
+
+.heatmap-button {
+    background-color: #2ecc71;
+    color: white;
+}
+
+.heatmap-button:hover {
+    background-color: #3adf8a;
+    transform: scale(1.1);
+}
+
+/* Base Station Dropdown */
+.base-station-container {
+    display: flex;
+    font-size: 1 rem;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40px;
+    padding: 10px;
+    border-radius: 8px;
+    background-color: #1e1e1e;
+    width: fit-content;
+    margin: 20px auto;
+}
+
+
+
+ .bs{
+    color:rgb(9, 10, 10);
+    background-color: rgb(163, 209, 213);
+    margin-right: 25px;
+    margin-top: 25px;
+ }
+ .bs:hover {
+    background-color: #e4f0ea;
+    transform: scale(1.1);
+}
+
+/* Global styles */
+body {
+    background-color: #121212;
+    color: white;
+   
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    font-family: 'Poppins', sans-serif;
   }
   
   /* Header styles */
   .header {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
-    padding: 20px 40px;
+    padding: 0px 40px;
     background: #1a1a1a;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
     position: fixed;
@@ -32,7 +198,17 @@ body {
   
   /* Navbar alignment */
   nav {
-    margin-left: auto;
+    position: absolute;
+    top: 20px;
+    right: 80px;
+    margin-left: 0;
+    margin-right: 0;
+  }
+  
+  .icon-image {
+    margin-right: auto;
+    width: 10px;
+    height: 10px;
   }
   
   nav a {
@@ -44,20 +220,22 @@ body {
   
   /* Profile icon */
   .profile-icon {
-    font-size: 1.5rem;
+     
     margin-left: 20px;
   }
   
   /* Content area */
   .content {
-    margin-top: 120px; /* Adjusted to move content lower */
+    margin-top: 300px; /* Adjusted to move content lower */
     text-align: center;
+    font-family: 'Poppins', sans-serif;
+    font-size:2rem;
     flex-grow: 1;
   }
   
   /* Earnings section */
   .earnings {
-    font-size: 3rem;
+    font-size: 6rem;
     font-weight: bold;
     margin-top: 80px; /* Moves earnings section further down */
   }
@@ -84,19 +262,23 @@ body {
   .go-online {
     background-color: #a0802e;
     color: white;
+    font-family: 'Poppins', sans-serif;
   }
   
   .go-online:hover {
     background-color: #d4a93d;
+    font-family: 'Poppins', sans-serif;
   }
   
   .go-offline {
     background-color: #b02e2e;
     color: white;
+    font-family: 'Poppins', sans-serif;
   }
   
   .go-offline:hover {
     background-color: #d14343;
+    font-family: 'Poppins', sans-serif;
   }
   
   /* Badge styles */
@@ -112,4 +294,76 @@ body {
   .badge.red {
     background-color: red;
     color: white;
+  }
+  .heatmap-button {
+    background-color: #2b7550;
+    margin:15px;
+    padding: 15px 30px;
+    font-size: 18px;
+    border-radius: 8px;
+    border: none;
+    color: white;
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif; 
+  }
+  .heatmap-button:hover{
+  background-color: #b3e9ce;
+  }
+
+ /* Notification box */
+.notificationpopup {
+    position: fixed;
+    top: 10px; /* Adjust to position the notification at the top */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgb(162, 162, 217);
+    color: white;
+    padding: 20px;
+    border-radius: 5px;
+    width: 80%;
+    max-width: 400px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 9999;
+    text-align: center;
+    font-size: 1.1rem;
+  }
+  
+  .notification h3 {
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  
+  .notification p {
+    margin: 10px 0;
+  }
+  
+  /* Buttons section inside the notification */
+  .notification-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+  }
+  
+  .confirm-btn, .reject-btn {
+    background-color: #4caf50; /* Green for confirm */
+    color: rgb(3, 65, 38);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    margin: 0 5px;
+  }
+  
+  .reject-btn {
+    background-color: #f44336; /* Red for reject */
+  }
+  
+  .confirm-btn:hover {
+    background-color: #45a049;
+  }
+  
+  .reject-btn:hover {
+    background-color: #d32f2f;
   }

@@ -1,84 +1,150 @@
 /* Leaderboard Container */
 .leaderboard-container {
-    display: flex;
-    flex-direction: column;
-    width: 90%;
-    max-width: 600px;
-    margin: 20px auto;
-    padding: 20px;
-    background: #f8fafc;
-    border-radius: 15px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    text-align: center;
-  }
-  
-  /* Leaderboard Title */
-  .leaderboard-title {
-    font-size: 50px;
-    font-weight: bold;
-    color: #2c3e50;
-    margin-bottom: 10px;
-  }
-  
-  /* Leaderboard Grid */
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  background: #f8fafc;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+
+}
+
+/* Leaderboard Title */
+.leaderboard-title {
+  font-size: 36px;
+  font-weight: bold;
+  color: #2c3e50;
+  margin-bottom: 20px;
+}
+
+/* Leaderboard Grid - Two Columns */
+.leaderboard-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  justify-items: center;
+}
+
+/* Leaderboard Cards */
+.leaderboard-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  width: 100%;
+  max-width: 280px;
+}
+
+.leaderboard-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Rank Badge */
+.rank-badge {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+/* Driver Icon */
+.driver-icon {
+  font-size: 50px;
+  color: #555;
+  margin-bottom: 10px;
+}
+
+/* Driver Info */
+.driver-info {
+  text-align: center;
+}
+
+.driver-name {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.xp-points {
+  font-size: 16px;
+  font-weight: bold;
+  color: #007bff;
+}
+
+/* Top 3 Ranks - Special Styling */
+.leaderboard-card:nth-child(1) {
+  background: linear-gradient(135deg, #fbc531, #f9f7f2);
+  color: white;
+}
+
+.leaderboard-card:nth-child(2) {
+  background: linear-gradient(135deg, #fbc531, #f9f7f2);
+  color: white;
+}
+
+.leaderboard-card:nth-child(3) {
+  background: linear-gradient(135deg, #fbc531, #f9f7f2);
+  color: white;
+}
+.leaderboard-card:nth-child(4) {
+  background: linear-gradient(135deg, #fbc531, #f9f7f2);
+  color: white;
+}
+.leaderboard-card:nth-child(5) {
+  background: linear-gradient(135deg, #fbc531, #f9f7f2);
+  color: white;
+}
+
+/* Modal Styling */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background: rgb(19, 19, 19);
+  padding: 20px;
+  border-radius: 12px;
+  text-align: center;
+  width: 80%;
+  max-width: 400px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.close-btn {
+  background: #007bff;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  margin-top: 15px;
+  cursor: pointer;
+}
+
+.close-btn:hover {
+  background: #0056b3;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
   .leaderboard-grid {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+    grid-template-columns: 1fr;
   }
-  
-  /* Leaderboard Cards */
-  .leaderboard-card {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background: white;
-    padding: 15px;
-    border-radius: 10px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    transition: transform 0.2s ease-in-out;
-  }
-  
-  .leaderboard-card:hover {
-    transform: scale(1.03);
-  }
-  
-  /* Rank Number */
-  .leaderboard-card h3 {
-    font-size: 20px;
-    font-weight: bold;
-    color: #ffcc00;
-  }
-  
-  /* Driver ID */
-  .driver-id {
-    font-size: 16px;
-    font-weight: bold;
-    color: #34495e;
-  }
-  
-  /* XP Points */
-  .xp-points {
-    font-size: 16px;
-    font-weight: bold;
-    color: #27ae60;
-  }
-  
-  /* Background Color Based on Rank */
-  .leaderboard-card:nth-child(1) {
-    background: #99ddff;
-  }
-  
-  .leaderboard-card:nth-child(2) {
-    background: #dfe6e9;
-  }
-  
-  .leaderboard-card:nth-child(3) {
-    background: #cceeff
-  }
-  
-  /* Green Highlight for Top 5 */
-  .leaderboard-card:nth-child(-n+5) {
-    border-left: 5px solid #27ae60;
-  }
-  
+}

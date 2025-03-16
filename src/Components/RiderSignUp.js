@@ -14,7 +14,7 @@ function RiderSignUp() {
     e.preventDefault();
     try {
       await createUserWithEmailAndPassword(auth, email, password);
-      navigate("/rider-dashboard");
+      navigate("/riderequest");
     } catch (err) {
       setError(err.message);
     }

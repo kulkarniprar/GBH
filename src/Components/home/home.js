@@ -5,7 +5,7 @@ import {
   signInWithEmailAndPassword,
 } from "firebase/auth";
 import "./home.css"; // Import the CSS for styling
-
+import myImage from './nammaYatri_logo.svg';
 function Home() {
   const [userType, setUserType] = useState("passenger");
   const [email, setEmail] = useState("");
@@ -67,13 +67,13 @@ function Home() {
 
   return (
     <div className="app">
-      <header className="header">
-        <img
-          src="https://i.pinimg.com/474x/c7/7b/7e/c77b7e3dde82fcad8f685d1bb1c75321.jpg"
-          alt="Namma Yatri Logo"
-          className="logo"
-        />
-      </header>
+      <div class="image">
+      <img src={myImage} alt="example" />
+
+      </div>
+     
+     
+     
 
       <div className="form-container">
         {/* User Type Selection */}
