@@ -14,7 +14,10 @@
     "firebase": "^11.4.0",
     "firebase-admin": "^13.2.0",
     "geofirestore": "^5.2.0",
+<<<<<<< HEAD
     "heatmap.js": "^2.0.5",
+=======
+>>>>>>> a7156d944328adc55497bfdf7d12a49cd04a6106
     "leaflet": "^1.9.4",
     "lucide-react": "^0.479.0",
     "papaparse": "^5.5.2",
@@ -25,6 +28,7 @@
     "react-router-dom": "^7.3.0",
     "react-scripts": "5.0.1",
     "socket.io": "^4.8.1",
+    "socket.io-client": "^4.8.1",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
